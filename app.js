@@ -6,8 +6,8 @@ let ruleIdCounter = 0;
 const presets = {
     corporate: [
         { original: 'MiscellaneousCorp', replacement: 'AnonymousCorp', caseSensitive: false, wholeWord: true },
-        { original: 'Project Phoenix', replacement: 'Project Parakeet', caseSensitive: false, wholeWord: true },
-        { original: 'CEO', replacement: 'CFO', caseSensitive: false, wholeWord: true },
+        { original: 'Project Phoenix', replacement: 'Project Rainbow', caseSensitive: false, wholeWord: true },
+        { original: 'CEO', replacement: 'Chief Officer', caseSensitive: false, wholeWord: true },
         { original: 'Q4', replacement: 'Period Four', caseSensitive: false, wholeWord: true }
     ],
     personal: [
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add initial rule if none exist
     if (rules.length === 0) {
-        addRule('BlahBlahCorp', 'PotatoesIncorporated', false, true);
+        addRule('MiscellaneousCorp', 'AnonymousCorp', false, true);
     }
 });
 
@@ -88,13 +88,13 @@ function renderRule(rule) {
         <input type="text" 
                class="rule-original" 
                value="${escapeHtml(rule.original)}" 
-               placeholder="e.g., BlahBlahCorp"
+               placeholder="e.g., MiscellaneousCorp"
                data-rule-id="${rule.id}">
         <label>Replace with:</label>
         <input type="text" 
                class="rule-replacement" 
                value="${escapeHtml(rule.replacement)}" 
-               placeholder="e.g., PotatoesIncorporated"
+               placeholder="e.g., AnonymousCorp"
                data-rule-id="${rule.id}">
         <div class="rule-options">
             <label>

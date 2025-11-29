@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Anonymiser</title>
+    <title>Data Obfuscator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Data Anonymiser</h1>
-            <p class="subtitle">No one knows for sure what happens to the data you submit to GenAI. But often its analysis on some data can save many hours of your time. 
-
-Let's keep identifiable data out of the reach of genAI just in case, and anonymise and obfuscate our data before pasting into a chat. This tool will find and replace all keywords or terms you define with something random. The output will allow GenAI to understand context, without being provided identifiable data. 
-
-This is executed client-sided, so no input or output data is stored on any servers. This project is lightweight, open source and can be deployed to your own Azure blob storage via my GitHub here https://github.com/synapse-dynamics/genAI-data-obfuscator/
-
-Note: If you are processing any sensitive or business data, please refer to your organisation's internal guidelines on generative AI use and data processing.</p>
+            <h1>🔒Data Obfuscator</h1>
+            <p class="subtitle">Safely anonymize sensitive data before using GenAI tools</p>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; margin-top: 20px; border-radius: 8px; text-align: left; line-height: 1.8;">
+                <p>No one knows for sure what happens to the data you submit to GenAI. But often its analysis on some data can save many hours of your time.</p>
+                <p>Let's keep identifiable data out of the reach of genAI just in case, and anonymise and obfuscate our data before pasting into a chat. This tool will find and replace all keywords or terms you define with something random. The output will allow GenAI to understand context, without being provided identifiable data.</p>
+                <p>This is executed client-sided, so no input or output data is stored on any servers. This project is lightweight, open source and can be deployed to your own Azure blob storage via my GitHub here <a href="https://github.com/synapse-dynamics/genAI-data-obfuscator/" target="_blank" style="color: #50e6ff; text-decoration: underline;">https://github.com/synapse-dynamics/genAI-data-obfuscator/</a></p>
+                <p><strong>Note:</strong> If you are processing any sensitive or business data, please refer to your organisation's internal guidelines on generative AI use and data processing.</p>
+            </div>
         </header>
 
         <div class="main-content">
@@ -56,6 +56,7 @@ Note: If you are processing any sensitive or business data, please refer to your
 Example input:
 Our company MiscellaneousCorp is working with client XYZ Ltd. on Project Phoenix. Contact jean-luc.picard@miscellaneouscorp.com for details. Budget: $150,000."
                     ></textarea>
+
                 </div>
 
                 <div class="button-row">
