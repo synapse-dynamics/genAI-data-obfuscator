@@ -2,11 +2,11 @@
 
 ## Overview
 
-No one knows for sure what happens to the data you submit to public GenAI. But often its analysis on some data can save many hours of your time. 
+No one knows for sure what happens to the data you submit to public GenAI. But using it for data analysis can often save valuable time. 
 
-Let's keep identifiable data out of the reach of genAI just in case, and anonymise and obfuscate our data before pasting into a chat. This tool will find and replace all keywords or terms you define with something random. The output will allow GenAI to understand context, without being provided identifiable data. 
+This tool will help you keep identifiable data out of the reach of genAI by anonymising your data before pasting into a chat. It will find and replace all keywords or terms you define with something random instead. The sanitised output will allow GenAI to understand context - without having real, identifiable information.
 
-This is executed client-sided, so no input or output data is stored on any servers. This project is lightweight, open source and can be deployed to your own Azure blob storage.
+This is executed client-sided, so no input or output data is stored on any servers. This project is lightweight, open source and can be deployed and hosted on your own Azure Blob Storage within 2-3 minutes.
 
 Note: If you are processing any sensitive or business data, please refer to your organisation's internal guidelines on generative AI use and data processing.
 
@@ -50,7 +50,7 @@ Hosted example: https://dataobfuscator3675.z6.web.core.windows.net/
 
 ```powershell
 cd azure-data-obfuscator
-.\deploy-storage.ps1
+.\deploy.ps1
 ```
 
 The script will:
@@ -61,14 +61,12 @@ The script will:
 5. ✓ Upload application files
 6. ✓ Display your live URL
 
-**That's it!** Your app is live.
-
 ### Option 2: Deploy via Bash Script (Linux/Mac)
 
 ```bash
 cd azure-data-obfuscator
-chmod +x deploy-storage.sh
-./deploy-storage.sh
+chmod +x deploy.sh
+./deploy.sh
 ```
 
 ### Option 3: Manual Deployment
@@ -133,8 +131,6 @@ az storage account show --name $storageAccountName --query "primaryEndpoints.web
   - 10,000 users × 100 KB = 1 GB = **£0.00**
 - Operations: £0.0004 per 10,000 requests
   - 10,000 page loads = **£0.004**
-
-**Estimated monthly cost: £0.50 - £2.00** for heavy internal tool usage
 
 **Perfect for:**
 - Internal tools with <10,000 users/month
@@ -206,7 +202,7 @@ Go to Azure Portal → Cost Management → Cost Analysis to see your actual spen
 ### Essential Commands
 ```powershell
 # Deploy
-.\deploy-storage.ps1
+.\deploy.ps1
 
 # Get URL
 az storage account show --name YOUR_STORAGE_NAME --query "primaryEndpoints.web" -o tsv
@@ -226,7 +222,7 @@ azure-data-obfuscator/
 ├── styles.css                     # Styling
 ├── app.js                         # Application logic
 ├── staticwebapp.config.json       # Configuration (not used but included)
-├── deploy-storage.ps1             # Windows deployment script
-├── deploy-storage.sh              # Linux/Mac deployment script
-└── README-STORAGE.md              # This file
+├── deploy.ps1             # Windows deployment script
+├── deploy.sh              # Linux/Mac deployment script
+└── README.md              # This file
 ```
