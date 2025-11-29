@@ -15,17 +15,18 @@ Note: If you are processing any sensitive or business data, please ensure you ha
 Hosted example: https://dataobfuscator3675.z6.web.core.windows.net/
 
 ## Features
-- ✅ **Low-cost deployment** using Azure Blob Storage 
-- ✅ **100% client-side processing** - no backend, no data storage
-- ✅ **Custom obfuscation rules** with case sensitivity and whole-word matching
-- ✅ **Preset templates** for common scenarios (corporate, personal, financial)
-- ✅ **Save/load rules** as JSON files
-- ✅ **Browser local storage** for persistent rules
-- ✅ **One-click copy** to clipboard
-- ✅ **Responsive design** works on mobile and desktop
+**Low-cost deployment** using Azure Blob Storage 
+**100% client-side processing** - no backend, no data storage
+**Custom obfuscation rules** with case sensitivity and whole-word matching
+**Preset templates** for common scenarios (corporate, personal, financial)
+**Save/load rules** as JSON files
+**Browser local storage** for persistent rules
+**One-click copy** to clipboard
+**Responsive design** works on mobile and desktop
 
 ## Architecture
 ```
+It doesn't get simpler than this...
 ┌─────────────────────────────────────────┐
 │  Azure Storage Account (Standard_LRS) 
 │   ├─ Static Website Hosting Enabled  
@@ -55,12 +56,12 @@ cd azure-data-obfuscator
 ```
 
 The script will:
-1. ✓ Login to Azure
-2. ✓ Create resource group
-3. ✓ Deploy Storage Account via ARM template
-4. ✓ Enable static website hosting
-5. ✓ Upload application files
-6. ✓ Display your live URL
+1. Login to Azure
+2. Create resource group
+3. Deploy Storage Account via ARM template
+4. Enable static website hosting
+5. Upload application files
+6. Display your live URL
 
 
 ### Option 2: Manual Deployment
@@ -116,7 +117,7 @@ az storage account show --name $storageAccountName --query "primaryEndpoints.web
 }
 ```
 
-### Cost Estimation
+### Cost Estimation (according to Claude)
 
 **Blob Storage Static Website:**
 - Storage: ~0.1 MB × £0.015/GB/month = ~£0.00
@@ -125,71 +126,6 @@ az storage account show --name $storageAccountName --query "primaryEndpoints.web
   - 10,000 users × 100 KB = 1 GB = **£0.00**
 - Operations: £0.0004 per 10,000 requests
   - 10,000 page loads = **£0.004**
-
-**Perfect for:**
-- Internal tools with <10,000 users/month
-- Low to moderate usage
-- Teams with limited budget
-- Organizations wanting simple deployment
-
-## Updating Your Application
-
-### GUI Method (Easiest)
-1. Go to [Azure Portal](https://portal.azure.com)
-2. Navigate to your Storage Account
-3. Click **"Containers"** in the left menu
-4. Click on **"$web"** container
-5. Click **"Upload"** button
-6. Select updated files and upload (they'll overwrite existing files)
-
-### Privacy Guarantees
-
-- ✅ Your sensitive data never leaves your device
-- ✅ No analytics or telemetry
-- ✅ No third-party scripts
-- ✅ Open source code (you can review it)
-- ✅ Can be run completely offline (save as local files)
-
-## Troubleshooting
-
-### Common Issues
-
-**Problem**: Can't access the website
-- ✓ Wait 1-2 minutes after deployment for DNS propagation
-- ✓ Clear browser cache
-- ✓ Verify files are in the $web container
-
-**Problem**: Files not uploading via CLI
-- ✓ Use `--auth-mode login` flag
-- ✓ Ensure you have Storage Blob Data Contributor role
-- ✓ Try uploading via Azure Portal GUI instead
-
-**Problem**: Getting 404 errors
-- ✓ Verify static website hosting is enabled
-- ✓ Check that index.html exists in $web container
-- ✓ Verify container has public blob access
-
-### Storage Account Name Requirements
-
-- Must be globally unique
-- 3-24 characters long
-- Lowercase letters and numbers only
-- No hyphens, underscores, or special characters
-
-
-### Check Costs
-
-Go to Azure Portal → Cost Management → Cost Analysis to see your actual spending.
-
-## Maintenance
-
-### Minimal Maintenance Required
-
-✅ **No server to patch**: Static files only
-✅ **No database**: No backups needed
-✅ **No runtime**: No version updates
-✅ **Auto-scaling**: Azure handles traffic
-✅ **99.9% SLA**: Built-in high availability
 
 ## Quick Reference
 
