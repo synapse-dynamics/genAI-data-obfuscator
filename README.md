@@ -6,7 +6,9 @@ No one knows for sure what happens to the data you submit to public GenAI. But u
 
 This tool will help you obfuscate any data you want to share with GenAI. It will find and replace all keywords or terms you define with something random instead. The sanitised output will allow GenAI to understand context - without having real, identifiable information.
 
-This is executed client-sided, so no input or output data is stored on any servers. This project is lightweight, open source and can be deployed and hosted on your own Azure Blob Storage within 2-3 minutes.
+This is executed client-sided, so no input or output data is stored on any servers. This project is lightweight, open source and can be deployed and hosted on your own Azure Blob Storage within 2-3 minutes. 
+
+Alternatively, you can just download the files locally and launch index.html in your browser to run a local version.
 
 Note: If you are processing any sensitive or business data, please ensure you have permission to do so. Refer to your organisation's internal guidelines on generative AI use and data processing.
 
