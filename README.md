@@ -61,15 +61,8 @@ The script will:
 5. ✓ Upload application files
 6. ✓ Display your live URL
 
-### Option 2: Deploy via Bash Script (Linux/Mac)
 
-```bash
-cd azure-data-obfuscator
-chmod +x deploy.sh
-./deploy.sh
-```
-
-### Option 3: Manual Deployment
+### Option 2: Manual Deployment
 
 ```powershell
 # 1. Login to Azure
@@ -223,6 +216,5 @@ azure-data-obfuscator/
 ├── app.js                         # Application logic
 ├── staticwebapp.config.json       # Configuration (not used but included)
 ├── deploy.ps1             # Windows deployment script
-├── deploy.sh              # Linux/Mac deployment script
 └── README.md              # This file
 ```
