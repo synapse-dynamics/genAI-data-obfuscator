@@ -2,7 +2,7 @@
 
 ## Overview
 
-No one knows for sure what happens to the data you submit to GenAI. But often its analysis on some data can save many hours of your time. 
+No one knows for sure what happens to the data you submit to public GenAI. But often its analysis on some data can save many hours of your time. 
 
 Let's keep identifiable data out of the reach of genAI just in case, and anonymise and obfuscate our data before pasting into a chat. This tool will find and replace all keywords or terms you define with something random. The output will allow GenAI to understand context, without being provided identifiable data. 
 
