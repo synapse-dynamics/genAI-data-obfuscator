@@ -4,11 +4,11 @@
 
 No one knows for sure what happens to the data you submit to public GenAI. But using it for data analysis can often save valuable time. 
 
-This tool will help you obfuscate any data you want to share with GenAI. It will find and replace all keywords or terms you define with something random instead. The sanitised output will allow GenAI to understand context - without having real, identifiable information.
+This tool will help you obfuscate any data you want to share with GenAI, in case you are working with some data which lightly references some names, companies, email addresses, etc -- and you want to keep that private. This tool will find and replace all keywords or terms you define with something random instead. The sanitised output will allow GenAI to understand the context of your data - without having real, identifiable information.
 
-This is executed client-sided, so no input or output data is stored on any servers. This project is lightweight, open source and can be deployed and hosted on your own Azure Blob Storage within 2-3 minutes. 
+This is executed client-sided, so no input or output data is stored on any servers. This project is lightweight, open source, and can be deployed and hosted on your own Azure Blob Storage within 2-3 minutes. Compatible with the free tier of Azure, this is an extremely cheap solution to host yourself.
 
-Alternatively, you can just download the files locally and launch index.html in your browser to run a local version.
+Alternatively, you can just download the files locally and launch index.html in your browser for a local version.
 
 Note: If you are processing any sensitive or business data, please ensure you have permission to do so. Refer to your organisation's internal guidelines on generative AI use and data processing.
 
@@ -17,7 +17,6 @@ Hosted example: https://dataobfuscator3675.z6.web.core.windows.net/
 ## Features
 - ✅ **Low-cost deployment** using Azure Blob Storage 
 - ✅ **100% client-side processing** - no backend, no data storage
-- ✅ **GUI file upload** available in Azure Portal
 - ✅ **Custom obfuscation rules** with case sensitivity and whole-word matching
 - ✅ **Preset templates** for common scenarios (corporate, personal, financial)
 - ✅ **Save/load rules** as JSON files
