@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Anonymiser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Anonymiser</h1>
+            <p class="subtitle">No one knows for sure what happens to the data you submit to GenAI. But often its analysis on some data can save many hours of your time. 
+
+Let's keep identifiable data out of the reach of genAI just in case, and anonymise and obfuscate our data before pasting into a chat. This tool will find and replace all keywords or terms you define with something random. The output will allow GenAI to understand context, without being provided identifiable data. 
+
+This is executed client-sided, so no input or output data is stored on any servers. This project is lightweight, open source and can be deployed to your own Azure blob storage via my GitHub here https://github.com/synapse-dynamics/genAI-data-obfuscator/
+
+Note: If you are processing any sensitive or business data, please refer to your organisation's internal guidelines on generative AI use and data processing.</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Configuration Panel -->
+            <section class="config-panel">
+                <h2>Obfuscation Rules</h2>
+                <div id="rules-container">
+                    <!-- Rules will be added here dynamically -->
+                </div>
+                <button id="add-rule-btn" class="btn btn-secondary">+ Add Rule</button>
+                
+                <div class="preset-rules">
+                    <h3>Quick Presets</h3>
+                    <button class="btn btn-small" onclick="loadPreset('corporate')">Corporate</button>
+                    <button class="btn btn-small" onclick="loadPreset('personal')">Personal Info</button>
+                    <button class="btn btn-small" onclick="loadPreset('financial')">Financial</button>
+                </div>
+                
+                <div class="actions">
+                    <button id="save-rules-btn" class="btn btn-tertiary">💾 Save Rules</button>
+                    <button id="load-rules-btn" class="btn btn-tertiary">📂 Load Rules</button>
+                    <button id="clear-rules-btn" class="btn btn-danger">🗑️ Clear All</button>
+                </div>
+            </section>
+
+            <!-- Processing Panel -->
+            <section class="processing-panel">
+                <div class="input-section">
+                    <div class="section-header">
+                        <h2>Original Text</h2>
+                        <span class="char-count" id="input-count">0 characters</span>
+                    </div>
+                    <textarea 
+                        id="input-text" 
+                        placeholder="Paste data to be anonymised/obfuscated here.
+
+Example input:
+Our company MiscellaneousCorp is working with client XYZ Ltd. on Project Phoenix. Contact jean-luc.picard@miscellaneouscorp.com for details. Budget: $150,000."
+                    ></textarea>
+                </div>
+
+                <div class="button-row">
+                    <button id="obfuscate-btn" class="btn btn-primary">🔄 Obfuscate Text</button>
+                    <button id="clear-text-btn" class="btn btn-secondary">Clear</button>
+                </div>
+
+                <div class="output-section">
+                    <div class="section-header">
+                        <h2>Obfuscated Text</h2>
+                        <span class="char-count" id="output-count">0 characters</span>
+                    </div>
+                    <textarea 
+                        id="output-text" 
+                        placeholder="Obfuscated text will appear here...
+
+Example output:
+Our company AnonymousCorp is working with client ABC Ltd. on Project Parakeet. Contact john.doe@anonymouscorp.com for details. Budget: $150,000."
+                        readonly
+                    ></textarea>
+                    <button id="copy-btn" class="btn btn-primary" disabled>📋 Copy to Clipboard</button>
+                    <span id="copy-feedback" class="copy-feedback"></span>
+                </div>
+
+                <div class="mapping-display" id="mapping-display" style="display: none;">
+                    <h3>Applied Replacements:</h3>
+                    <div id="mapping-list"></div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>⚠️ <strong>Privacy Note:</strong> All processing happens in your browser. No data is sent to any server.</p>
+            <p class="small-text">Perfect for preparing data for ChatGPT, Claude, or other GenAI tools while maintaining confidentiality.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
