@@ -1,7 +1,5 @@
 # genAI-data-obfuscator
 
-# Data Obfuscator - Azure Blob Storage Deployment Guide
-
 ## Overview
 
 No one knows for sure what happens to the data you submit to GenAI. But often its analysis on some data can save many hours of your time. 
